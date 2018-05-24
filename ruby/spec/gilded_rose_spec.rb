@@ -102,4 +102,23 @@ describe GildedRose do
 
   end
 
+  describe "#update_quality for 'Conjured'" do
+
+    it "degrade in Quality twice as fast as normal items" do
+      items = [Item.new('Conjured Mana Cake', 3, 6)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].sell_in).to eq 2
+      expect(items[0].quality).to eq 4
+    end
+
+    it "The Quality of an item is never negative" do
+      items = [Item.new('Conjured Mana Cake', 3, 6)]
+      g = GildedRose.new(items)
+      8.times { g.update_quality() }
+      expect(items[0].sell_in).to eq (-5)
+      expect(items[0].quality).to eq 0
+    end
+
+  end
+
 end

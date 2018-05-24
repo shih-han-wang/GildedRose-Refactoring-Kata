@@ -62,46 +62,46 @@ describe GildedRose do
     end
 
   end
-  #
-  # describe "#update_quality for 'Backstage passes'" do
-  #
-  #   it "Increases in Quality the older it gets" do
-  #     items = [Item.new('Backstage passes to a TAFKAL80ETC concert', 15, 20)]
-  #     GildedRose.new(items).update_quality()
-  #     expect(items[0].sell_in).to eq 14
-  #     expect(items[0].quality).to eq 21
-  #   end
-  #
-  #   it "Quality is never more than 50" do
-  #     items = [Item.new('Backstage passes to a TAFKAL80ETC concert', 10, 49)]
-  #     GildedRose.new(items).update_quality()
-  #     expect(items[0].sell_in).to eq 9
-  #     expect(items[0].quality).to eq 50
-  #   end
-  #
-  #   it "Increases by 2 when there are 10 days or less" do
-  #     items = [Item.new('Backstage passes to a TAFKAL80ETC concert', 10, 33)]
-  #     GildedRose.new(items).update_quality()
-  #     expect(items[0].sell_in).to eq 9
-  #     expect(items[0].quality).to eq 35
-  #   end
-  #
-  #   it "Increases by 3 when there are 5 days or less" do
-  #     items = [Item.new('Backstage passes to a TAFKAL80ETC concert', 5, 44)]
-  #     GildedRose.new(items).update_quality()
-  #     expect(items[0].sell_in).to eq 4
-  #     expect(items[0].quality).to eq 47
-  #   end
-  #
-  #   it "Quality drops to 0 after the concert" do
-  #     items = [Item.new('Backstage passes to a TAFKAL80ETC concert', 0, 44)]
-  #     GildedRose.new(items).update_quality()
-  #     expect(items[0].sell_in).to eq (-1)
-  #     expect(items[0].quality).to eq 0
-  #   end
-  #
-  # end
-  #
+
+  describe "#update_quality for 'Backstage passes'" do
+
+    it "Increases in Quality the older it gets" do
+      items = [Item.new('Backstage passes to a TAFKAL80ETC concert', 15, 20)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].sell_in).to eq 14
+      expect(items[0].quality).to eq 21
+    end
+
+    it "Quality is never more than 50" do
+      items = [Item.new('Backstage passes to a TAFKAL80ETC concert', 10, 49)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].sell_in).to eq 9
+      expect(items[0].quality).to eq 50
+    end
+
+    it "Increases by 2 when there are 10 days or less" do
+      items = [Item.new('Backstage passes to a TAFKAL80ETC concert', 10, 33)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].sell_in).to eq 9
+      expect(items[0].quality).to eq 35
+    end
+
+    it "Increases by 3 when there are 5 days or less" do
+      items = [Item.new('Backstage passes to a TAFKAL80ETC concert', 5, 44)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].sell_in).to eq 4
+      expect(items[0].quality).to eq 47
+    end
+
+    it "Quality drops to 0 after the concert" do
+      items = [Item.new('Backstage passes to a TAFKAL80ETC concert', 0, 44)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].sell_in).to eq (-1)
+      expect(items[0].quality).to eq 0
+    end
+
+  end
+
   describe "#update_quality for 'Conjured'" do
 
     it "degrade in Quality twice as fast as normal items" do

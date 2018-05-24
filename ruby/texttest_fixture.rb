@@ -2,6 +2,7 @@
 
 require './lib/gilded_rose.rb'
 
+
 puts "OMGHAI!"
 items = [
   Item.new(name="+5 Dexterity Vest", sell_in=10, quality=20),
@@ -16,7 +17,7 @@ items = [
   Item.new(name="Conjured Mana Cake", sell_in=3, quality=6), # <-- :O
 ]
 
-days = 2
+days = 10
 if ARGV.size > 0
   days = ARGV[0].to_i + 1
 end

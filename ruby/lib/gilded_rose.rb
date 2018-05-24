@@ -7,11 +7,8 @@ class GildedRose
 
   def update_quality()
     @items.each do |item|
-      if item.name == 'Conjured Mana Cake'
-        quality_degrades_by_2(item)
-      else
-        quality_degrades(item)
-      end
+      return quality_degrades_by_2(item) if item.name == 'Conjured Mana Cake'
+      quality_degrades(item)
     end
   end
 

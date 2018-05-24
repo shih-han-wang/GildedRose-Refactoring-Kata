@@ -34,24 +34,24 @@ describe GildedRose do
     end
   end
 
-  # describe "#update_quality for 'Aged Brie'" do
-  #
-  #   it "Increases in Quality the older it gets" do
-  #     items = [Item.new('Aged Brie', 2, 0)]
-  #     GildedRose.new(items).update_quality()
-  #     expect(items[0].sell_in).to eq 1
-  #     expect(items[0].quality).to eq 1
-  #   end
-  #
-  #   it "is never more than 50" do
-  #     items = [Item.new('Aged Brie', 2, 0)]
-  #     g = GildedRose.new(items)
-  #     52.times { g.update_quality() }
-  #     expect(items[0].sell_in).to eq (-50)
-  #     expect(items[0].quality).to eq 50
-  #   end
-  # end
-  #
+  describe "#update_quality for 'Aged Brie'" do
+
+    it "Increases in Quality the older it gets" do
+      items = [Item.new('Aged Brie', 2, 0)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].sell_in).to eq 1
+      expect(items[0].quality).to eq 1
+    end
+
+    it "is never more than 50" do
+      items = [Item.new('Aged Brie', 2, 0)]
+      g = GildedRose.new(items)
+      52.times { g.update_quality() }
+      expect(items[0].sell_in).to eq (-50)
+      expect(items[0].quality).to eq 50
+    end
+  end
+
   describe "#update_quality for 'Sulfuras'" do
 
     it "never has to be sold or decreases in Quality" do

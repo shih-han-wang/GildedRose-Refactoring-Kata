@@ -2,4 +2,4 @@
 *.pyc
 /perl6/lib/.precomp
 /elixir/_build/
-/coverage/coverage
+/ruby/coverage

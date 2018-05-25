@@ -9,7 +9,7 @@ module Quality
   end
 
   def self.degrades(item, num)
-    item.sell_in < 0 ? item.quality -= (num * 2) : item.quality -= num
+    item.sell_in.negative? ? item.quality -= (num * 2) : item.quality -= num
   end
 
   def self.increases(item, num)

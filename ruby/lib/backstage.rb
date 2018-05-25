@@ -3,8 +3,8 @@ require_relative 'sell_in'
 module Backstage
 
   def self.update(item)
-    Sell_in::change(item)
-    if item.sell_in < 0
+    SellIn::change(item)
+    if item.sell_in.negative?
       Quality::set(item, 0)
     elsif item.sell_in < 5
       Quality::increases(item, 3)
